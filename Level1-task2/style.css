@@ -1,0 +1,45 @@
+#num1  {
+    height: 50px;
+   margin-left: 10vw;
+    padding: 2vw;
+    padding-left: 5vw;
+    margin-top: 4vw;
+    background-color: aquamarine;
+    color: #000;
+    font-size: 2vw;
+    font-weight: 500;
+}
+#num2  {
+    height: 50px;
+   margin-left: 10vw;
+    padding: 2vw;
+    padding-left: 5vw;
+    margin-top: 4vw;
+    background-color: aquamarine;
+    color: #000;
+    font-size: 2vw;
+    font-weight: 500;
+}
+button{
+    height: 50px;
+    width: 100px;
+    background-color: brown;
+    padding: 10px;
+   margin-top: 2vw;
+ color: aliceblue;
+ font-weight: 500;
+}
+
+#result{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(118, 118, 175);
+    margin-left: 45vw;
+    border-radius: 12px;
+    padding: 3vw;
+    padding-left: 5vw;
+    margin-top: 4vw;
+    color: #000;
+    font-weight: 500;
+    font-size: 3vw;
+}
