@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Inheritance: Types & Usage|Flyeng Career
+    </title>
+     <meta name="description" content="Explore C++ Inheritance: Single, Multiple, Hierarchical, Multilevel, and Hybrid. Learn how classes inherit properties and behaviors, enabling efficient code reuse and extension.">
+  <meta name="keywords" content="C++ inheritance, single inheritance, multilevel inheritance, multiple inheritance, hybrid inheritance, hierarchical inheritance">
+  <meta name="author" content="Flyeng Career">
+        <link rel="icon" type="x-icon" href="Fc">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidenav {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            overflow-y: auto;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .sidenav-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidenav-menu li {
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .sidenav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+            padding: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sidenav-menu li:hover {
+            background-color: greenyellow; 
+
+        }
+
+        .sidenav-menu li a:hover {
+            transform: scale(1.1); 
+            color: black;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            transition: 0.5s;
+            z-index: 2;
+            margin-left: 250px;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidenav {
+                width: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .sidenav.active {
+                width: 250px;
+            }
+
+            .content.active {
+                margin-left: 250px;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-3px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-3px, -5px);
+            }
+        }
+        .container1{
+            border-radius: 20px;
+             padding: 2em;
+            margin: 0 auto;
+            max-width: 700px;
+            height: auto;
+            background-color: #acdbe8;
+        
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+          }
+        a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          .next {
+            background-color: #5b7f87;
+            color: white;
+            float: right;
+            margin-right: 2px;
+          }
+          .previous {
+            background-color: #5b7f87;
+            color: white;
+          }
+        .home-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home-icon:hover {
+    color: #fff; /* Change the color on hover */
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidenav" id="sidenav">
+            <ul class="sidenav-menu">
+                <li><a href="Introduction.html">C++ Introduction</a></li>
+                <li><a href="Syntax.html">C++ Syntax</a></li>
+                <li><a href=" Variables and Constants.html">C++ Variables and Constants</a></li>
+                <li><a href="Comments.html">C++ Comments</a></li>
+                <li><a href="Data Types.html">C++ Data Types</a></li>
+                <li><a href="Operators.html">C++ Operators</a></li>
+                <li><a href="Booleans.html">C++ Booleans</a></li>
+                <li><a href="IfElse.html">C++ If ... Else</a></li>
+        
+                <li><a href="Switch.html">C++ Switch</a></li>
+                <li><a href=" While Loop.html">C++ While Loop</a></li>
+                <li><a href="For Loop.html">C++ For Loop</a></li>
+                <li><a href="Break and Continue.html">C++ Break and Continue</a></li>
+                <li><a href="Arrays.html">C++ Arrays</a></li>
+                <li><a href="Strings.html">C++ Strings</a></li>
+                <li><a href="Pointers.html">C++ Pointers</a></li>
+                <li><a href="Functions.html">C++ Functions</a></li>
+                <li><a href="Recursion.html">C++ Recursion</a></li>
+                <li><a href="Funtion Overloading .html">Funtion Overloading in C++</a></li>
+                <li><a href="Structure And Union.html">C++ Structure And Union</a></li>
+                <li><a href="OOP Basics.html">C++ OOP Basics</a></li>
+                <li><a href="Classes & Objects.html">C++ Classes & Objects</a></li>
+                <li><a href="Objects Memory Allocation.html"> C++ Objects Memory Allocation</a></li>
+                <li><a href="Friend Functions & Classes.html">Friend Functions & Classes</a></li>
+                <li><a href="Constructors.html">C++ Constructors</a></li>
+                <li><a href="Encapsulation.html">C++ Encapsulation</a></li>
+                <li><a href="Inheritance.html">C++ Inheritance</a></li>
+                <li><a href="Access Modifiers.html">C++ Access Modifiers</a></li>
+                <li><a href="Polymorphism.html">C++ Polymorphism</a></li>
+                <li><a href="File Handling.html">C++ File Handling</a></li>
+                <li><a href="Templates.html">C++ Templates</a></li>
+                <li><a href="Containers.html">C++ Containers</a></li>
+                <li><a href="Vectors.html">C++ Vectors</a></li>
+                <li><a href="Lists.html">C++ Lists</a></li>
+                <li><a href="Maps.html">C++ Maps</a></li>
+                <li><a href="Top Interview questions.html">Top Interview questions</a></li>
+        </ul>
+        </nav>
+        <div class="content">
+            <header>
+                 <a href="https://www.flyengcareer.com" class="home-icon">
+        <i class="fas fa-home"></i>
+    </a>
+                <button class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </header>
+           
+            <h1 style="text-align: center;">Inheritance</h1>
+        
+<p><b>In C++, inheritance is a process in which one object acquires all the properties and behaviors of its parent object automatically. In such way, you can reuse, extend or modify the attributes and behaviors which are defined in other class.</b></p>
+<p><b>In C++, the class which inherits the members of another class is called derived class and the class whose members are inherited is called base class. The derived class is the specialized class for the base class.</b></p>
+<h2>Types Of Inheritance:
+</h2>
+            <ul>
+                <li><b>Single inheritance
+                </b></li>
+                <br>
+                <li><b>Multiple inheritance
+                </b></li>
+                <br>
+                <li><b>Hierarchical inheritance
+                </b></li>
+                <br>
+                <li><b>Multilevel inheritance
+                </b></li>
+                <br>
+                <li><b>Hybrid inheritance
+                </b></li>
+            </ul>
+            <img src="img/in.png" alt="" class="center">
+            <br>
+            <h2>Derived Classes:
+            </h2>
+            <p><b>A Derived class is defined as the class derived from the base class.
+
+            </b></p>
+            <div class="container1">
+                <h2><code>class derived_class_name :: visibility-mode base_class_name  <br>
+                    {  <br>
+                        // body of the derived class.  <br>
+                    }  </code></h2>
+            </div>
+            <ul>
+                <li><b>When the base class is privately inherited by the derived class, public members of the base class becomes the private members of the derived class. Therefore, the public members of the base class are not accessible by the objects of the derived class only by the member functions of the derived class.</b></li>
+                <br>
+                <li><b>When the base class is publicly inherited by the derived class, public members of the base class also become the public members of the derived class. Therefore, the public members of the base class are accessible by the objects of the derived class as well as by the member functions of the base class.</b></li>
+            </ul>
+            <h2>1. Single Inheritance:
+            </h2>
+            <p><b>Single inheritance is defined as the inheritance in which a derived class is inherited from the only one base class.
+
+            </b></p>
+            <h2><pre>class ClassA
+                {
+                    //body of ClassA
+                };
+                 
+                //derived from ClassA
+                class ClassB : public ClassA
+                {
+                    //body of ClassB
+                };
+                </pre></h2>
+            <h2>2.Multilevel Inheritance:</h2>
+            <p><b>Multilevel inheritance is a process of deriving a class from another derived class.</b></p>
+            <p><b>OR</b></p>
+            <p><b>When one class inherits another class which is further inherited by another class, it is known as multi level inheritance in C++. Inheritance is transitive so the last derived class acquires all the members of all its base classes.</b></p>
+            <h2><pre>class ClassA
+                {
+                    //body of ClassA
+                };
+                 
+                //derived from ClassA
+                class ClassB : public ClassA
+                {
+                    //body of ClassB
+                };
+                 
+                //derived from ClassB
+                class ClassC : public ClassB
+                {
+                    //body of ClassC
+                };
+                </pre></h2>
+            <h2>3.Multiple Inheritance:</h2>
+            <p><b>Multiple inheritance is the process of deriving a new class that inherits the attributes from two or more classes.
+
+            </b></p>
+            <h2><pre>class ClassA
+                {
+                    //body of ClassA
+                };
+                 
+                class ClassB
+                {
+                    //body of ClassB
+                };
+                 
+                //derived from ClassB and Class C
+                class ClassC : public ClassA, public ClassB
+                {
+                    //body of ClassC
+                };
+                </pre></h2>
+            <h2>4.Hybrid Inheritance:</h2>
+            <p><b>Hybrid inheritance is a combination of more than one type of inheritance.
+
+            </b></p>
+            <h2><pre>class ClassA
+              {
+                    //body of ClassA
+                };
+                 
+                class ClassB
+                {
+                    //body of ClassB
+                };
+                 
+                //derived from ClassA and ClassA
+                class ClassC : public ClassA, public ClassB
+                {
+                    //body of ClassC
+                };
+                 
+                //derived from ClassC
+                class ClassD : public ClassC
+                {
+                    //body of ClassD
+                };
+                </pre></h2>
+            <h2>5.Hierarchical Inheritance:
+            </h2>
+            <p><b>A hierarchical inheritance is a type of inheritance in which several derived classes are inherited from a single base class. 
+
+ <br>
+
+                For example, we have three classes ClassA, ClassB, and ClassC.  If ClassB and Class C are inherited from ClassA, it means that ClassB and ClassC can now implement the functionalities of ClassA. This is hierarchical inheritance.</b></p>
+   <h2><pre>class ClassA
+    {
+        //body of ClassA
+    };
+     
+    //derived from ClassA
+    class ClassB : public ClassA
+    {
+        //body of ClassB
+    };
+     
+    //derived from ClassA
+    class ClassC : public ClassA
+    {
+        //body of ClassC
+    };
+    </pre></h2>
+            <a href="Access Modifiers.html" class="next" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">Next &raquo;</a>
+    <a href="Encapsulation.html" class="previous" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">&laquo; Previous</a>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidenav = document.getElementById('sidenav');
+        const content = document.querySelector('.content');
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            sidenav.classList.toggle('active');
+            content.classList.toggle('active');
+
+        });
+    </script>
+</body>
+</html>

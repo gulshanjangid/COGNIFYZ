@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Variables: Types, Declaration, Rules	|Flyeng Career</title>
+    <meta name="description" content="Explore the world of C++ variables - containers for data manipulation. Learn types, declaration techniques, and guidelines.">
+  <meta name="keywords" content="C++, variables, constants, integer, floating-point, character, boolean, variable declaration, variable definition, C++ keywords, programming, constant variables, difference between constant and variables, solved examples">
+  <meta name="author" content="Flyeng Career">
+        <link rel="icon" type="x-icon" href="Fc">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidenav {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            overflow-y: auto;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .sidenav-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidenav-menu li {
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .sidenav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+            padding: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sidenav-menu li:hover {
+            background-color: greenyellow; 
+
+        }
+
+        .sidenav-menu li a:hover {
+            transform: scale(1.1); 
+            color: black;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            transition: 0.5s;
+            z-index: 2;
+            margin-left: 250px;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidenav {
+                width: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .sidenav.active {
+                width: 250px;
+            }
+
+            .content.active {
+                margin-left: 250px;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-3px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-3px, -5px);
+            }
+        }
+        .container1{
+            border-radius: 20px;
+             padding: 2em;
+            margin: 0 auto;
+            max-width: 700px;
+            height: auto;
+            background-color: #acdbe8;
+        
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+          }
+        a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          .next {
+            background-color: #5b7f87;
+            color: white;
+            float: right;
+            margin-right: 2px;
+          }
+          .previous {
+            background-color: #5b7f87;
+            color: white;
+          }
+        .home-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home-icon:hover {
+    color: #fff; /* Change the color on hover */
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidenav" id="sidenav">
+            <ul class="sidenav-menu">
+                <li><a href="Introduction.html">C++ Introduction</a></li>
+                <li><a href="Syntax.html">C++ Syntax</a></li>
+                <li><a href=" Variables and Constants.html">C++ Variables and Constants</a></li>
+                <li><a href="Comments.html">C++ Comments</a></li>
+                <li><a href="Data Types.html">C++ Data Types</a></li>
+                <li><a href="Operators.html">C++ Operators</a></li>
+                <li><a href="Booleans.html">C++ Booleans</a></li>
+                <li><a href="IfElse.html">C++ If ... Else</a></li>
+        
+                <li><a href="Switch.html">C++ Switch</a></li>
+                <li><a href=" While Loop.html">C++ While Loop</a></li>
+                <li><a href="For Loop.html">C++ For Loop</a></li>
+                <li><a href="Break and Continue.html">C++ Break and Continue</a></li>
+                <li><a href="Arrays.html">C++ Arrays</a></li>
+                <li><a href="Strings.html">C++ Strings</a></li>
+                <li><a href="Pointers.html">C++ Pointers</a></li>
+                <li><a href="Functions.html">C++ Functions</a></li>
+                <li><a href="Recursion.html">C++ Recursion</a></li>
+                <li><a href="Funtion Overloading .html">Funtion Overloading in C++</a></li>
+                <li><a href="Structure And Union.html">C++ Structure And Union</a></li>
+                <li><a href="OOP Basics.html">C++ OOP Basics</a></li>
+                <li><a href="Classes & Objects.html">C++ Classes & Objects</a></li>
+                <li><a href="Objects Memory Allocation.html"> C++ Objects Memory Allocation</a></li>
+                <li><a href="Friend Functions & Classes.html">Friend Functions & Classes</a></li>
+                <li><a href="Constructors.html">C++ Constructors</a></li>
+                <li><a href="Encapsulation.html">C++ Encapsulation</a></li>
+                <li><a href="Inheritance.html">C++ Inheritance</a></li>
+                <li><a href="Access Modifiers.html">C++ Access Modifiers</a></li>
+                <li><a href="Polymorphism.html">C++ Polymorphism</a></li>
+                <li><a href="File Handling.html">C++ File Handling</a></li>
+                <li><a href="Templates.html">C++ Templates</a></li>
+                <li><a href="Containers.html">C++ Containers</a></li>
+                <li><a href="Vectors.html">C++ Vectors</a></li>
+                <li><a href="Lists.html">C++ Lists</a></li>
+                <li><a href="Maps.html">C++ Maps</a></li>
+                <li><a href="Top Interview questions.html">Top Interview questions</a></li>
+                
+                
+
+            </ul>
+        </nav>
+        <div class="content">
+            <header>
+                 <a href="https://www.flyengcareer.com" class="home-icon">
+        <i class="fas fa-home"></i>
+    </a>
+                <button class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </header>
+            <h1 style="text-align: center;">C++ Variables and Constants</h1>
+            
+                 <h2>C++ Variables</h2>
+                 <h3>Variables are containers that store information that can be manipulated and referenced later by the programmer within the code.</h3>
+                 <h4>or</h4>
+                 <h3>Variables serve as containers for storing data values.
+
+                 </h3>
+                 <h3>In the realm of C++, a variety of variable types exists. Here are some of them:
+
+                 </h3>
+                 <ul>
+                    <li><b>An integer variable, defined with the keyword "int," holds whole numbers without decimals, such as 63 or -1.</b></li>
+                    <br>
+                    <li><b>A floating-point variable, defined with the keyword "float," stores numbers with decimals, like 79.97 or -13.26.</b></li>
+                    <br>
+                    <li><b>A character variable, specified with the keyword "char," stores single characters like 'A' or 'z'. Char values are enclosed within single quotes.</b>
+                    </li>
+                    <br>
+                    <li><b>A boolean variable, declared with the keyword "bool," holds a singular value: 0 for false and 1 for true.</b></li>
+                 </ul>
+                 <h3>How to Declare Variables?</h3>
+                 <br>
+                 <div class="container1">
+                 <h3 style="text-align:center;"><code>// Declaring a single variable<br>
+                    type variable_name;<br>
+                    
+                    // Declaring multiple variables:<br>
+                    type variable1_name, variable2_name, variable3_name;<br></code></h3>
+                    </div>
+                    <br>
+                    <h3>Guidelines for Variable Declaration:</h3>
+                    <ul>
+                        <li><b>The variable name can consist of letters, digits, and underscores.
+
+                        </b></li>
+                        <br>
+                        <li><b>Variable names are case-sensitive; for instance, "Arr" and "arr" represent distinct variables.
+
+                        </b></li>
+                        <br>
+                        <li><b>Variable names should not include any whitespace or special characters (e.g., #, $, %, *).
+
+                        </b></li>
+                        <br>
+                        <li><b>All variable names must commence with a letter of the alphabet or an underscore (_).
+
+                        </b></li>
+                        <br>
+                        <li><b>Usage of C++ keywords (such as float, double, class) as variable names is not allowed.
+
+
+
+
+                        </b></li>
+                        <br>
+                    </ul>
+                    <h4>Valid Variable Names:</h4>
+                    <div class="container1">
+                        <h4><code>int x;    // Can contain letters<br>
+                            int _yz;  // Can include underscores<br>
+                            int z40;  // Can have a mix of letters and numbers<br>
+                            </code></h4>
+                    </div>
+                    <br>
+                    <h4>
+                        Invalid Variable Names:
+
+
+                    </h4>
+
+                    <div class="container1">
+                        <h4><code>int 89;      // Should not begin with a number<br>
+                            int a b;     // Should not contain any whitespace<br>
+                            int double;  // Cannot use a C++ keyword as a variable name <br>
+                            </code></h4>
+                    </div>
+              <br>
+              <h3>Distinguishing Between Definition and Declaration</h3>
+                 <h4>In programming, variable declaration signifies the initial introduction of a variable before its inaugural use. On the other hand, a variable definition is the segment where the variable is allocated a memory location and assigned a specific value.</h4>
+                 <br>
+                 <img src="img/var.png" alt="" class="center">
+                 <br>
+
+                 <h2> C++ Constants</h2>
+                 <h3>In C programming, a constant is a variable that, true to its name, remains unalterable once declared in the program. The values of constant variables cannot be modified once they are defined.</h3>
+                 <br>
+                 <div class="container1">
+                 <h3><code>const int LIGHT_SPEED = 299792458;<br>
+                    // Attempting to modify LIGHT_SPEED will result in an error.<br>
+                    // Example:<br>
+                    // LIGHT_SPEED = 2500; <br>// Error! LIGHT_SPEED is a constant.<br>
+                    </code></h3>
+                    </div>
+                    <br>
+                    <h3>What is the Difference between Constant and Variables?</h3>
+                    <h3>Constant:-</h3>
+                    <ul>
+                        <li><b>A constant does not change its value over time.</b></li>
+                        <br>
+                        <li><b>Constants are usually written in numbers.</b></li>
+                        <br>
+                        <li><b>Constants usually represent the known values in an equation, expression or in line of programming.</b></li>
+                        <br>
+                        <li><b>Constants have fixed face values.	</b></li>
+                    </ul>
+                    <br>
+                    <h3>Variables:-</h3>
+                    <ul>
+                        <li><b>A variable, on the other hand, changes its value dependent on the equation.
+                        </b></li>
+                        <br>
+                        <li><b>Variables are specially written in letters or symbols.
+                        </b></li>
+                        <br>
+                        <li><b>Variables, on the other hand, represent  the unknown values.
+                        </b></li>
+                        <br>
+                        <li><b>Variables do not have fixed face values.
+                        </b></li>
+                    </ul>
+                 <br>
+                 <h2>Solved Examples:
+                </h2>
+                <h3>1.What is the value of x in the given equation x+10=5?</h3>
+                <h3>x+10 = 5<br>
+                     <br>
+                    x = 5-10<br>
+                      <br>
+                    x = -5</h3>
+                    <br>
+                    <h3>2. Find constant and variables  in the given expression.
+
+                    </h3>
+                    <h3><ol><li>3x = 9   =>x is the variable and 9 is the constant.</li><br><li> x – y = -10  =>Here, x and y are the variables and -10 is the constant value.
+
+                    </li></ol></h3>
+            <a href=" Comments.html" class="next" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">Next &raquo;</a>
+    <a href="Syntax.html" class="previous" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">&laquo; Previous</a>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidenav = document.getElementById('sidenav');
+        const content = document.querySelector('.content');
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            sidenav.classList.toggle('active');
+            content.classList.toggle('active');
+
+        });
+    </script>
+</body>
+</html>

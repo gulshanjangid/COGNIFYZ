@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ OOPS Basics: Embracing Object-Oriented Programming|Flyeng Career
+    </title>
+    <meta name="description" content="Dive into the essence of OOP in C++, from classes to inheritance. Master the art of secure, modular coding with this comprehensive guide.">
+  <meta name="keywords" content="C++, Object-Oriented Programming, OOP Basics, C++ classes, C++ objects, Encapsulation, Abstraction, Polymorphism, Inheritance, Procedural Programming, OOP vs Procedural Programming, C++ programming, Programming paradigms">
+  <meta name="author" content="Flyeng Career">
+   <link rel="icon" type="x-icon" href="Fc">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidenav {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            overflow-y: auto;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .sidenav-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidenav-menu li {
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .sidenav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+            padding: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sidenav-menu li:hover {
+            background-color: greenyellow; 
+
+        }
+
+        .sidenav-menu li a:hover {
+            transform: scale(1.1); 
+            color: black;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            transition: 0.5s;
+            z-index: 2;
+            margin-left: 250px;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidenav {
+                width: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .sidenav.active {
+                width: 250px;
+            }
+
+            .content.active {
+                margin-left: 250px;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-3px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-3px, -5px);
+            }
+        }
+        .container1{
+            border-radius: 20px;
+             padding: 2em;
+            margin: 0 auto;
+            max-width: 700px;
+            height: auto;
+            background-color: #acdbe8;
+        
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+          }
+        a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          .next {
+            background-color: #5b7f87;
+            color: white;
+            float: right;
+            margin-right: 2px;
+          }
+          .previous {
+            background-color: #5b7f87;
+            color: white;
+          }
+        .home-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home-icon:hover {
+    color: #fff; /* Change the color on hover */
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidenav" id="sidenav">
+            <ul class="sidenav-menu">
+                <li><a href="Introduction.html">C++ Introduction</a></li>
+                <li><a href="Syntax.html">C++ Syntax</a></li>
+                <li><a href=" Variables and Constants.html">C++ Variables and Constants</a></li>
+                <li><a href="Comments.html">C++ Comments</a></li>
+                <li><a href="Data Types.html">C++ Data Types</a></li>
+                <li><a href="Operators.html">C++ Operators</a></li>
+                <li><a href="Booleans.html">C++ Booleans</a></li>
+                <li><a href="IfElse.html">C++ If ... Else</a></li>
+        
+                <li><a href="Switch.html">C++ Switch</a></li>
+                <li><a href=" While Loop.html">C++ While Loop</a></li>
+                <li><a href="For Loop.html">C++ For Loop</a></li>
+                <li><a href="Break and Continue.html">C++ Break and Continue</a></li>
+                <li><a href="Arrays.html">C++ Arrays</a></li>
+                <li><a href="Strings.html">C++ Strings</a></li>
+                <li><a href="Pointers.html">C++ Pointers</a></li>
+                <li><a href="Functions.html">C++ Functions</a></li>
+                <li><a href="Recursion.html">C++ Recursion</a></li>
+                <li><a href="Funtion Overloading .html">Funtion Overloading in C++</a></li>
+                <li><a href="Structure And Union.html">C++ Structure And Union</a></li>
+                <li><a href="OOP Basics.html">C++ OOP Basics</a></li>
+                <li><a href="Classes & Objects.html">C++ Classes & Objects</a></li>
+                <li><a href="Objects Memory Allocation.html"> C++ Objects Memory Allocation</a></li>
+                <li><a href="Friend Functions & Classes.html">Friend Functions & Classes</a></li>
+                <li><a href="Constructors.html">C++ Constructors</a></li>
+                <li><a href="Encapsulation.html">C++ Encapsulation</a></li>
+                <li><a href="Inheritance.html">C++ Inheritance</a></li>
+                <li><a href="Access Modifiers.html">C++ Access Modifiers</a></li>
+                <li><a href="Polymorphism.html">C++ Polymorphism</a></li>
+                <li><a href="File Handling.html">C++ File Handling</a></li>
+                <li><a href="Templates.html">C++ Templates</a></li>
+                <li><a href="Containers.html">C++ Containers</a></li>
+                <li><a href="Vectors.html">C++ Vectors</a></li>
+                <li><a href="Lists.html">C++ Lists</a></li>
+                <li><a href="Maps.html">C++ Maps</a></li>
+                <li><a href="Top Interview questions.html">Top Interview questions</a></li>
+        </ul>
+        </nav>
+        <div class="content">
+            <header>
+                 <a href="https://www.flyengcareer.com" class="home-icon">
+        <i class="fas fa-home"></i>
+    </a>
+                <button class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </header>
+           
+            <h1 style="text-align: center;">C++ OOPS Basics</h1>
+      </h3>
+      
+   <h2>What is OOP?
+</h2>
+
+<p><b>OOP stands for Object-Oriented Programming. An object-oriented programming language uses objects in its programming. Programming with object-oriented concepts aims to emulate real-world concepts such as inheritance, polymorphism, abstraction, etc, in a program.
+</b></p>
+<p><b>C++ language was designed with the main intention of adding object-oriented programming to C language. As the size of the program increases, the readability, maintainability, and bug-free nature of the program decrease. The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
+</b></p>
+<h2>Characteristics of an Object-Oriented Programming Language:
+
+</h2>
+<ul>
+    <li><b>Class
+    </b></li>
+    <br>
+    <li><b>Object</b></li>
+    <br>
+    <li><b>Encapsulation
+    </b></li>
+    <br>
+    <li><b>Abstraction
+    </b></li>
+    <br>
+    <li><b>Polymorphism
+    </b></li>
+    <br>
+    <li><b>Inheritance
+    </b></li>
+    <br>
+    
+</ul>
+<h2>Difference between Procedure Oriented Programming and Object-Oriented Programming
+</h2>
+<table>
+    <tr>
+        <th>S.no.	</th>
+      <th>On the basis of</th>
+      <th>Procedural Programming</th>
+      <th>Object-oriented programming
+    </th>
+    </tr>
+    <tr>
+        <td>1</td>
+      <td><b>Definition</b></td>
+      <td>It is a programming language that is derived from structure programming and based upon the concept of calling procedures. It follows a step-by-step approach in order to break down a task into a set of variables and routines via a sequence of instructions.	</td>
+      <td>Object-oriented programming is a computer programming design philosophy or methodology that organizes/ models software design around data or objects rather than functions and logic.
+    </td>
+    </tr>
+    <tr>
+        <td>2</td>
+      <td><b>Security</b></td>
+      <td>It is less secure than OOPs.</td>
+      <td>Data hiding is possible in object-oriented programming due to abstraction. So, it is more secure than procedural programming.
+    </td>
+    </tr>
+    <tr>
+        <td>3</td>
+      <td><b>Approach	</b></td>
+      <td>It follows a top-down approach.	</td>
+      <td>It follows a bottom-up approach.
+    </td>
+    </tr>
+    <tr>
+        <td>4</td>
+      <td><b>Orientation	</b></td>
+      <td>It is structure/procedure-oriented.	</td>
+      <td>It is object-oriented.
+    </td>
+    </tr>
+    <tr>
+        <td>5</td>
+      <td><b>Access modifiers	</b></td>
+      <td>There are no access modifiers in procedural programming.	</td>
+      <td>The access modifiers in OOP are named as private, public, and protected.
+    </td>
+    </tr>
+    <tr>
+        <td>6</td>
+      <td><b>Overloading	</b></td>
+      <td>Overloading is not possible in procedural programming.	</td>
+      <td>In OOP, there is a concept of function overloading and operator overloading.
+    </td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><b>Virtual class</b></td>
+        <td>In procedural programming, there are no virtual classes.	</td>
+        <td>In OOP, there is an appearance of virtual classes in inheritance.
+        </td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><b>Data hiding	</b></td>
+        <td>There is not any proper way for data hiding.	</td>
+        <td>There is a possibility of data hiding.
+        </td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td><b>Examples	</b></td>
+        <td>Examples of Procedural programming include C, Fortran, Pascal, and VB.	</td>
+        <td>The examples of object-oriented programming are -
+            .NET, C#, Python, Java, VB.NET, and C++.</td>
+    </tr>
+  </table>
+  <br>
+  
+
+
+      
+   
+
+            <a href="Classes & Objects.html" class="next" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">Next &raquo;</a>
+    <a href="Structure And Union.html" class="previous" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">&laquo; Previous</a>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidenav = document.getElementById('sidenav');
+        const content = document.querySelector('.content');
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            sidenav.classList.toggle('active');
+            content.classList.toggle('active');
+
+        });
+    </script>
+</body>
+</html>

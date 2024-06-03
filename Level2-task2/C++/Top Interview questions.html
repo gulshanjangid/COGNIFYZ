@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering C++: Top 50 Interview Questions Guide|Flyeng Career
+    </title>
+    <meta name="description" content="Explore essential C++ concepts with these top interview questions. From OOP to smart pointers, ace your interview.">
+  <meta name="keywords" content="C++ interview questions
+,Object-Oriented Programming (OOP) in C++
+,C++ class and object
+,Encapsulation and inheritance in C++
+,Polymorphism and operator overloading
+,Constructors and destructors in C++
+,Memory allocation in C++
+,Standard Template Library (STL) in C++
+,Exception handling and error management in C++
+,Smart pointers and dynamic memory in C++
+,Namespace and scope resolution in C++
+,C++ keywords: const, volatile, static, mutable, explicit
+,Copy constructor and move semantics in C++
+,Lambda functions and C++11 features
+,RAII (Resource Acquisition Is Initialization) in C++
+,C++ best practices and coding techniques">
+  <meta name="author" content="Flyeng Career">
+        <link rel="icon" type="x-icon" href="Fc">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidenav {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            overflow-y: auto;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .sidenav-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidenav-menu li {
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .sidenav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+            padding: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sidenav-menu li:hover {
+            background-color: greenyellow; 
+
+        }
+
+        .sidenav-menu li a:hover {
+            transform: scale(1.1); 
+            color: black;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            transition: 0.5s;
+            z-index: 2;
+            margin-left: 250px;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidenav {
+                width: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .sidenav.active {
+                width: 250px;
+            }
+
+            .content.active {
+                margin-left: 250px;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-3px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-3px, -5px);
+            }
+        }
+        .container1{
+            border-radius: 20px;
+             padding: 2em;
+            margin: 0 auto;
+            max-width: 700px;
+            height: auto;
+            background-color: #acdbe8;
+        
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+          }
+        a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          .next {
+            background-color: #5b7f87;
+            color: white;
+            float: right;
+            margin-right: 2px;
+          }
+          .previous {
+            background-color: #5b7f87;
+            color: white;
+          }
+        .home-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home-icon:hover {
+    color: #fff; /* Change the color on hover */
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidenav" id="sidenav">
+            <ul class="sidenav-menu">
+                <li><a href="Introduction.html">C++ Introduction</a></li>
+                <li><a href="Syntax.html">C++ Syntax</a></li>
+                <li><a href=" Variables and Constants.html">C++ Variables and Constants</a></li>
+                <li><a href="Comments.html">C++ Comments</a></li>
+                <li><a href="Data Types.html">C++ Data Types</a></li>
+                <li><a href="Operators.html">C++ Operators</a></li>
+                <li><a href="Booleans.html">C++ Booleans</a></li>
+                <li><a href="IfElse.html">C++ If ... Else</a></li>
+        
+                <li><a href="Switch.html">C++ Switch</a></li>
+                <li><a href=" While Loop.html">C++ While Loop</a></li>
+                <li><a href="For Loop.html">C++ For Loop</a></li>
+                <li><a href="Break and Continue.html">C++ Break and Continue</a></li>
+                <li><a href="Arrays.html">C++ Arrays</a></li>
+                <li><a href="Strings.html">C++ Strings</a></li>
+                <li><a href="Pointers.html">C++ Pointers</a></li>
+                <li><a href="Functions.html">C++ Functions</a></li>
+                <li><a href="Recursion.html">C++ Recursion</a></li>
+                <li><a href="Funtion Overloading .html">Funtion Overloading in C++</a></li>
+                <li><a href="Structure And Union.html">C++ Structure And Union</a></li>
+                <li><a href="OOP Basics.html">C++ OOP Basics</a></li>
+                <li><a href="Classes & Objects.html">C++ Classes & Objects</a></li>
+                <li><a href="Objects Memory Allocation.html"> C++ Objects Memory Allocation</a></li>
+                <li><a href="Friend Functions & Classes.html">Friend Functions & Classes</a></li>
+                <li><a href="Constructors.html">C++ Constructors</a></li>
+                <li><a href="Encapsulation.html">C++ Encapsulation</a></li>
+                <li><a href="Inheritance.html">C++ Inheritance</a></li>
+                <li><a href="Access Modifiers.html">C++ Access Modifiers</a></li>
+                <li><a href="Polymorphism.html">C++ Polymorphism</a></li>
+                <li><a href="File Handling.html">C++ File Handling</a></li>
+                <li><a href="Templates.html">C++ Templates</a></li>
+                <li><a href="Containers.html">C++ Containers</a></li>
+                <li><a href="Vectors.html">C++ Vectors</a></li>
+                <li><a href="Lists.html">C++ Lists</a></li>
+                <li><a href="Maps.html">C++ Maps</a></li>
+                <li><a href="Top Interview questions.html">Top Interview questions</a></li>
+        </ul>
+        </nav>
+        <div class="content">
+            <header>
+                 <a href="https://www.flyengcareer.com" class="home-icon">
+        <i class="fas fa-home"></i>
+    </a>
+                <button class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </header>
+           
+            <h1 style="text-align: center;">Top Interview questions</h1>
+            <br>
+
+            1. What is C++?<br>
+            2. Differentiate between C and C++.<br>
+            3. Explain the concept of OOP (Object-Oriented Programming).<br>
+            4. What is a class in C++?<br>
+            5. Define an object.<br>
+            6. What is encapsulation?<br>
+            7. Explain the concept of inheritance.<br>
+            8. What is polymorphism?<br>
+            9. Differentiate between function overloading and function overriding.<br>
+            10. What is a constructor? Explain its types.<br>
+            11. What is a destructor?<br>
+            12. Differentiate between new and malloc.<br>
+            13. Explain the 'this' pointer.<br>
+            14. What is a friend function?<br>
+            15. What is operator overloading?<br>
+            16. Explain the concept of virtual functions.<br>
+            17. What is an abstract class?<br>
+            18. What is a pure virtual function?<br>
+            19. Explain multiple inheritance.<br>
+            20. What is a template in C++?<br>
+            21. Describe exception handling in C++.<br>
+            22. What is the Standard Template Library (STL)?<br>
+            23. Differentiate between a shallow copy and a deep copy.<br>
+            24. What is a namespace in C++?<br>
+            25. Explain the scope resolution operator.<br>
+            26. What is the purpose of the 'const' keyword?<br>
+            27. How does the 'volatile' keyword work?<br>
+            28. What is a static member function?<br>
+            29. Explain the concept of a reference variable.<br>
+            30. How is dynamic memory allocation handled in C++?<br>
+            31. What are smart pointers in C++?<br>
+            32. What is the purpose of the 'mutable' keyword?<br>
+            33. Differentiate between 'new' and 'placement new.'<br>
+            34. Explain the role of 'delete' and 'delete[]' operators.<br>
+            35. What is a copy constructor?<br>
+            36. Describe the importance of the 'explicit' keyword.<br>
+            37. How does the 'const_cast' operator work?<br>
+            38. What is the purpose of 'typeid' operator?<br>
+            39. Explain the 'try', 'catch', and 'throw' blocks.<br>
+            40. What is the purpose of 'std::move'?<br>
+            41. Describe the difference between 'const' and 'constexpr.'<br>
+            42. What is the 'nullptr' keyword?<br>
+            43. Explain the role of 'auto' keyword in C++.<br>
+            44. What is a lambda function?<br>
+            45. How does the 'override' keyword work?<br>
+            46. What is the purpose of the 'final' keyword?<br>
+            47. Describe the 'extern' keyword.<br>
+            48. What is the role of 'static_assert' in C++?<br>
+            49. Explain the concept of 'RAII' (Resource Acquisition Is Initialization).<br>
+            50. Describe the importance of the 'volatile' keyword?<br>
+            
+               <br>
+               <br>
+            <a href="Introduction.html" class="next" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">Next &raquo;</a>
+    <a href="Maps.html" class="previous" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">&laquo; Previous</a>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidenav = document.getElementById('sidenav');
+        const content = document.querySelector('.content');
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            sidenav.classList.toggle('active');
+            content.classList.toggle('active');
+
+        });
+    </script>
+</body>
+</html>

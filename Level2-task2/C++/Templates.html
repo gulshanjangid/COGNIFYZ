@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering C++ Templates for Efficient Coding|Flyeng Career
+    </title>
+    <meta name="description" content="Dive into the world of C++ templates and witness their transformative impact on code efficiency. Say farewell to repetitive class definitions with this guide to parameterized classes.">
+  <meta name="keywords" content="C++ Templates
+,Template Classes in C++
+,Parameterized Classes in C++
+,Generic Programming in C++
+,C++ Data Types
+,Class Templates
+,Template Parameters in C++
+,Vector Class Template
+,Set Class Template
+,Linked List Template in C++
+,Compile Time Expansion in C++
+,C++ Programming Language
+,C++ Code Optimization
+,C++ Development Best Practices
+,Generic Declarations in C++
+,C++ Programming Examples
+,C++ Coding Tips
+,Efficient C++ Programming
+,C++ Template Usage
+,C++ Programming Techniques">
+  <meta name="author" content="Flyeng Career">
+        <link rel="icon" type="x-icon" href="Fc">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidenav {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            overflow-y: auto;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .sidenav-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidenav-menu li {
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .sidenav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+            padding: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sidenav-menu li:hover {
+            background-color: greenyellow; 
+
+        }
+
+        .sidenav-menu li a:hover {
+            transform: scale(1.1); 
+            color: black;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            transition: 0.5s;
+            z-index: 2;
+            margin-left: 250px;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidenav {
+                width: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .sidenav.active {
+                width: 250px;
+            }
+
+            .content.active {
+                margin-left: 250px;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-3px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-3px, -5px);
+            }
+        }
+        .container1{
+            border-radius: 20px;
+             padding: 2em;
+            margin: 0 auto;
+            max-width: 700px;
+            height: auto;
+            background-color: #acdbe8;
+        
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+          }
+        a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          .next {
+            background-color: #5b7f87;
+            color: white;
+            float: right;
+            margin-right: 2px;
+          }
+          .previous {
+            background-color: #5b7f87;
+            color: white;
+          }
+        .home-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home-icon:hover {
+    color: #fff; /* Change the color on hover */
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidenav" id="sidenav">
+            <ul class="sidenav-menu">
+                <li><a href="Introduction.html">C++ Introduction</a></li>
+                <li><a href="Syntax.html">C++ Syntax</a></li>
+                <li><a href=" Variables and Constants.html">C++ Variables and Constants</a></li>
+                <li><a href="Comments.html">C++ Comments</a></li>
+                <li><a href="Data Types.html">C++ Data Types</a></li>
+                <li><a href="Operators.html">C++ Operators</a></li>
+                <li><a href="Booleans.html">C++ Booleans</a></li>
+                <li><a href="IfElse.html">C++ If ... Else</a></li>
+        
+                <li><a href="Switch.html">C++ Switch</a></li>
+                <li><a href=" While Loop.html">C++ While Loop</a></li>
+                <li><a href="For Loop.html">C++ For Loop</a></li>
+                <li><a href="Break and Continue.html">C++ Break and Continue</a></li>
+                <li><a href="Arrays.html">C++ Arrays</a></li>
+                <li><a href="Strings.html">C++ Strings</a></li>
+                <li><a href="Pointers.html">C++ Pointers</a></li>
+                <li><a href="Functions.html">C++ Functions</a></li>
+                <li><a href="Recursion.html">C++ Recursion</a></li>
+                <li><a href="Funtion Overloading .html">Funtion Overloading in C++</a></li>
+                <li><a href="Structure And Union.html">C++ Structure And Union</a></li>
+                <li><a href="OOP Basics.html">C++ OOP Basics</a></li>
+                <li><a href="Classes & Objects.html">C++ Classes & Objects</a></li>
+                <li><a href="Objects Memory Allocation.html"> C++ Objects Memory Allocation</a></li>
+                <li><a href="Friend Functions & Classes.html">Friend Functions & Classes</a></li>
+                <li><a href="Constructors.html">C++ Constructors</a></li>
+                <li><a href="Encapsulation.html">C++ Encapsulation</a></li>
+                <li><a href="Inheritance.html">C++ Inheritance</a></li>
+                <li><a href="Access Modifiers.html">C++ Access Modifiers</a></li>
+                <li><a href="Polymorphism.html">C++ Polymorphism</a></li>
+                <li><a href="File Handling.html">C++ File Handling</a></li>
+                <li><a href="Templates.html">C++ Templates</a></li>
+                <li><a href="Containers.html">C++ Containers</a></li>
+                <li><a href="Vectors.html">C++ Vectors</a></li>
+                <li><a href="Lists.html">C++ Lists</a></li>
+                <li><a href="Maps.html">C++ Maps</a></li>
+                <li><a href="Top Interview questions.html">Top Interview questions</a></li>
+        </ul>
+        </nav>
+        <div class="content">
+            <header>
+                 <a href="https://www.flyengcareer.com" class="home-icon">
+        <i class="fas fa-home"></i>
+    </a>
+                <button class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </header>
+           
+            <h1 style="text-align: center;">C++ Templates</h1>
+            <h2>What are templates?
+            </h2>
+  <p><b>A template is believed to escalate the potential of C++ several fold by giving it the ability to define data types as parameters making it useful to reduce repetitions of the same declaration of classes for different data types. 
+
+ <br>
+ <br>
+
+
+    Declaring classes for every other data type doesn't completely utilize the potential of C++. It is very analogous to when we said classes are the templates for objects, here templates themselves are the templates of the classes. That is, what classes are for objects, templates are for classes.
+    
+     </b></p>
+     <h2>Why do we use templates?
+    </h2>
+    <p><b>To understand the reason behind using templates, we will have to understand the effort behind declaring classes for different data types. Suppose we want to have a structure for each of the three data types, int, float, and char. Then we’ll obviously write the whole thing again and again making it awfully difficult. This is where the savior comes, the templates. It helps to parametrize the data type and then, declare it once in the source code suffice. Very similar to what we do in functions. It is because of this, also called, parameterized classes.
+
+    </b></p>
+    <div class="container1">
+<h2><pre>class vector
+    {
+        int *arr;
+        int size;
+    };
+    </pre></h2>
+    </div>
+    <p><b>But, if we need another array of some other data type, we will have to redefine another class for the same. To avoid that repetition of logic, templates help. Here’s how we do subtle changes in the same definition of the class for an integer array to make it generic for any other data type as well.
+
+    </b></p>
+
+    <div class="container1">
+        <h2><pre>
+            template class T
+                class vector
+                {
+                    T *arr;
+                    int size;
+                };
+                
+        </pre></h2>
+    </div>
+    <p><b>Here, we declared a template of class and passed a variable T as its parameter. Then, we defined the class of vector and keep the data type of *arr as T only. Now, the array becomes of the type we supply in the template as T.
+
+    </b></p>
+    
+    <p><b>Class templates are one application of templates. Class templates could be used according to the requirements of the programmer. Templates are nothing but shortened generic declarations of similar entities. They are expanded at the compile time. </b></p>
+    <p><b>Examples of some of the in-built class templates are,
+
+        Vector, Set, Linked List etc.</b></p>
+        <p><b>Class templates are helpful for classes that are independent of the data type. And like any other function, there could be more than one parameter to a template. On the basis of the number of parameters of a template, they could be single parameters as well as multiple parameters. 
+
+        </b></p>
+            <a href="Containers.html" class="next" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">Next &raquo;</a>
+    <a href="File Handling.html" class="previous" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">&laquo; Previous</a>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidenav = document.getElementById('sidenav');
+        const content = document.querySelector('.content');
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            sidenav.classList.toggle('active');
+            content.classList.toggle('active');
+
+        });
+    </script>
+</body>
+</html>

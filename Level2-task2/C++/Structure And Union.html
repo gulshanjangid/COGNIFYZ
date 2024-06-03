@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Structures and Unions: A Deep Dive|Flyeng Career
+    </title>
+    <meta name="description" content="Explore how C++ structures and unions efficiently store diverse data types. Learn their differences and applications.">
+  <meta name="keywords" content="C++ structures
+,C++ unions
+,Structure vs Union
+,Data storage in C++
+,Programming data types
+,Memory optimization
+,Binary tree in C++
+,Nested unions
+,Union applications
+,C++ programming tips">
+  <meta name="author" content="Flyeng Career">
+        <link rel="icon" type="x-icon" href="Fc">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidenav {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            overflow-y: auto;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .sidenav-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidenav-menu li {
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .sidenav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+            padding: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sidenav-menu li:hover {
+            background-color: greenyellow; 
+
+        }
+
+        .sidenav-menu li a:hover {
+            transform: scale(1.1); 
+            color: black;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            transition: 0.5s;
+            z-index: 2;
+            margin-left: 250px;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidenav {
+                width: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .sidenav.active {
+                width: 250px;
+            }
+
+            .content.active {
+                margin-left: 250px;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-3px, 5px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-3px, -5px);
+            }
+        }
+        .container1{
+            border-radius: 20px;
+             padding: 2em;
+            margin: 0 auto;
+            max-width: 700px;
+            height: auto;
+            background-color: #acdbe8;
+        
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+          }
+        a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          .next {
+            background-color: #5b7f87;
+            color: white;
+            float: right;
+            margin-right: 2px;
+          }
+          .previous {
+            background-color: #5b7f87;
+            color: white;
+          }
+        .home-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home-icon:hover {
+    color: #fff; /* Change the color on hover */
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidenav" id="sidenav">
+            <ul class="sidenav-menu">
+                <li><a href="Introduction.html">C++ Introduction</a></li>
+                <li><a href="Syntax.html">C++ Syntax</a></li>
+                <li><a href=" Variables and Constants.html">C++ Variables and Constants</a></li>
+                <li><a href="Comments.html">C++ Comments</a></li>
+                <li><a href="Data Types.html">C++ Data Types</a></li>
+                <li><a href="Operators.html">C++ Operators</a></li>
+                <li><a href="Booleans.html">C++ Booleans</a></li>
+                <li><a href="IfElse.html">C++ If ... Else</a></li>
+        
+                <li><a href="Switch.html">C++ Switch</a></li>
+                <li><a href=" While Loop.html">C++ While Loop</a></li>
+                <li><a href="For Loop.html">C++ For Loop</a></li>
+                <li><a href="Break and Continue.html">C++ Break and Continue</a></li>
+                <li><a href="Arrays.html">C++ Arrays</a></li>
+                <li><a href="Strings.html">C++ Strings</a></li>
+                <li><a href="Pointers.html">C++ Pointers</a></li>
+                <li><a href="Functions.html">C++ Functions</a></li>
+                <li><a href="Recursion.html">C++ Recursion</a></li>
+                <li><a href="Funtion Overloading .html">Funtion Overloading in C++</a></li>
+                <li><a href="Structure And Union.html">C++ Structure And Union</a></li>
+                <li><a href="OOP Basics.html">C++ OOP Basics</a></li>
+                <li><a href="Classes & Objects.html">C++ Classes & Objects</a></li>
+                <li><a href="Objects Memory Allocation.html"> C++ Objects Memory Allocation</a></li>
+                <li><a href="Friend Functions & Classes.html">Friend Functions & Classes</a></li>
+                <li><a href="Constructors.html">C++ Constructors</a></li>
+                <li><a href="Encapsulation.html">C++ Encapsulation</a></li>
+                <li><a href="Inheritance.html">C++ Inheritance</a></li>
+                <li><a href="Access Modifiers.html">C++ Access Modifiers</a></li>
+                <li><a href="Polymorphism.html">C++ Polymorphism</a></li>
+                <li><a href="File Handling.html">C++ File Handling</a></li>
+                <li><a href="Templates.html">C++ Templates</a></li>
+                <li><a href="Containers.html">C++ Containers</a></li>
+                <li><a href="Vectors.html">C++ Vectors</a></li>
+                <li><a href="Lists.html">C++ Lists</a></li>
+                <li><a href="Maps.html">C++ Maps</a></li>
+                <li><a href="Top Interview questions.html">Top Interview questions</a></li>
+        </ul>
+        </nav>
+        <div class="content">
+            <header>
+                 <a href="https://www.flyengcareer.com" class="home-icon">
+        <i class="fas fa-home"></i>
+    </a>
+                <button class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </header>
+           
+            <h1 style="text-align: center;">C++ Structure And Union</h1>
+      </h3>
+      <h3>Structures are usually used when we wish to store data of different data types together. For example, if we want to store information about a book, there could be a number of parameters defining a book. 
+
+        Books have a title, an author name, the number of pages, and a price. All of the book attributes belong to different data types. The titles and author names must be strings, but the prices and number of pages must be numerical. </h3>
+        <h3>One way to store the data is to construct individual arrays, and another method is to use a structure variable. It is to keep in mind that structure elements are always stored in contiguous memory locations.</h3>
+        <h3><code>struct structure_name  <br>
+            {<br>
+                //structure_elements<br>
+            } structure_variable;</code></h3>
+            <h3>Ex:<code>struct Books<br>
+                {<br>
+                    char title[20];<br>
+                    char author[100];<br>
+                    float price;<br>
+                    int pages;<br>
+                };</code></h3>
+                <h3>Where are Structs useful?</h3>
+                <p><b>Structures are used to store a large amount of data of varying data types.
+                    They are used to send data to the printer.
+                    For placing the cursor at an appropriate position on the screen, we can use structure.
+                    It can be used in drawing and floppy formatting.
+                    We use structures in finding out the list of equipment attached to the computer.</b></p>
+                    <br>
+                    <h2>What are Unions
+                        in C++?</h2>
+                        <p><b>The Union is a user-defined data type in C++ language that can contain elements of the different data types just like structure. But unlike structures, all the members in the C++ union are stored in the same memory location. Due to this, only one member can store data at the given instance.</b></p>
+                        <h3> Union Declaration:</h3>
+                        <h3><code>union union_name {<br>
+                            datatype member1;<br>
+                            datatype member2;<br>
+                            ...<br>
+                        };</code>
+                    <br>
+                    Keep in mind that we have to always end the union declaration with a semi-colon.</h3>
+                    <h3>Different Ways to Define a Union Variable:</h3>
+                    <ul><li><b>With Union Declaration</b></li>
+                    <li><b>After Union Declaration</b></li></ul>
+                    <br>
+                    <h3>1.Defining Union Variable with Declaration:</h3>
+                    <h3><code>union union_name {<br>
+                        datatype member1;<br>
+                        datatype member2;<br>
+                        ...<br>
+                    } <br>var1, var2, ...;</code></h3>
+<h3>2.Defining Union Variable after Declaration:</h3>
+<h3><code>union union_name var1, var2, var3...;</code></h3>
+<p><b>where union_name is the name of an already declared union.</b></p>
+<h4><b style="color: rgb(233, 87, 14);">Access Union Members:</b>We can access the members of a union by using the ( . ) dot operator just like structures.</h4>
+<h3><code>var1.member1;
+</code></h3>
+<p><b>where var1 is the union variable and member1 is the member of the union.
+
+</b></p>
+<p><B>The above method of accessing the members of the union also works for the nested unions.
+
+</B></p>
+<h3><code>var1.member1.memberA;
+</code></h3>
+<p><b> Here:var1 is a union variable.
+member1 is a member of the union.
+memberA is a member of member1.</b></p>
+<h3>Initialization of Union in C++</h3>
+<h3><code>var1.member1 = some_value;</code></h3>
+<h2 style="text-align: center;">Difference between  Structure and  Union?</h2>
+<img src="img/u1.png" alt="" class="center">
+<h3> What are the applications of unions?</h3>
+<p><b>Unions can be useful in many situations where we want to use the same memory for two or more members. For example, suppose we want to implement a binary tree data structure where each leaf node has a double data value, while each internal node has pointers to two children, but no data. If we declare this as: </b></p>
+<h3><code>struct NODE {<br>
+struct NODE* left;<br>
+struct NODE* right;<br>
+double data;<br>
+};<br>
+</code></h3>
+<p><b>then every node requires 16 bytes, with half the bytes wasted for each type of node. On the other hand, if we declare a node as the following, then we can save space</b></p>
+<h3><code>struct NODE {<br>
+bool is_leaf;<br>
+union {<br>
+    struct {<br>
+        struct NODE* left;<br>
+        struct NODE* right;<br>
+    } internal;<br>
+    double data;<br>
+} info;<br>
+};<br>
+</code></h3>
+
+
+
+
+
+
+
+
+
+      
+   
+
+            <a href="OOP Basics.html" class="next" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">Next &raquo;</a>
+    <a href="Funtion Overloading .html" class="previous" style="text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;">&laquo; Previous</a>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidenav = document.getElementById('sidenav');
+        const content = document.querySelector('.content');
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            sidenav.classList.toggle('active');
+            content.classList.toggle('active');
+
+        });
+    </script>
+</body>
+</html>
